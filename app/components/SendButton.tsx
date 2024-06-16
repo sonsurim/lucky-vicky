@@ -1,12 +1,17 @@
-'use client'
-import { useFormStatus } from 'react-dom'
+"use client";
+import { useFormStatus } from "react-dom";
+import { Spinner } from "./Spinner";
 
 export const SendButton = () => {
-  const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
 
   return (
-    <button type="submit" aria-disabled={pending} className='border w-36 ml-2 bg-white'>
-      얍!🍀
+    <button
+      type="submit"
+      disabled={pending}
+      className="border w-20 h-10 ml-2 bg-white"
+    >
+      {pending ? <Spinner /> : "얍!✨"}
     </button>
-  )
-}
+  );
+};

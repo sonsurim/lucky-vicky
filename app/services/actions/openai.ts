@@ -11,7 +11,7 @@ export const createQuestion = async (prevState: any, formData: FormData) => {
   const question = formData.get('question') as string;
 
   const response = await openai.chat.completions.create({
-    model: 'gpt-4-turbo',
+    model: 'gpt-4o',
     messages: [
       {
         role: 'system',
@@ -33,7 +33,9 @@ export const createQuestion = async (prevState: any, formData: FormData) => {
         - 상황 : 게임에서 꼴등한 상황
         - 원영적 사고 : 아싸 뒤에서 1등이다~
 
-        입력받은 상황에 대한 원영적 사고에 맞는 대답을 해야 합니다. 대답에는 해결책을 포함하지 않으며 문장은 항상 완전 럭키비키잔앙!🍀으로 끝나야 합니다.`,
+        입력받은 상황에 대한 원영적 사고에 맞는 대답을 해야 합니다. 대답에는 해결책을 포함하지 않으며 문장은 항상 완전 럭키비키잔앙!🍀으로 끝나야 합니다.
+        입력받은 상황의 주체가 "나"로 되어 있다면 "너"로 대체해야 합니다.
+        `,
       },
       {
         role: 'user',
