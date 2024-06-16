@@ -2,7 +2,7 @@
 
 import { SendButton } from "./SendButton";
 import { useFormState } from "react-dom";
-import { createQuestion } from "../services/actions/openai";
+import { createQuestion } from "../services/openai.action";
 import { AnswerPromptProps } from "./AnswerPrompt";
 import { DynamicTextarea } from "./DynamicTextarea";
 

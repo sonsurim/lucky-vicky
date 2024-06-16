@@ -1,4 +1,4 @@
-import { QuestionForm } from "./components/QuestionForm";
+import { QuestionForm } from "@/app/components/QuestionForm";
 import Image from "next/image";
 
 export default function Home() {
