@@ -21,5 +21,5 @@ export const createAnswer = async (_: any, formData: FormData) => {
     ],
   });
 
-  return response.choices[0].message.content;
+  return response.choices[0].message.content || '';
 };
