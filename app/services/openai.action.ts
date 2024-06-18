@@ -7,8 +7,8 @@ const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY || "",
 });
 
-export const createQuestion = async (prevState: any, formData: FormData) => {
-  const question = formData.get("question") as string;
+export const createAnswer = async (_: any, formData: FormData) => {
+  const situation = formData.get("situation") as string;
 
   const response = await openai.chat.completions.create({
     model: "gpt-4o",
@@ -16,7 +16,7 @@ export const createQuestion = async (prevState: any, formData: FormData) => {
       ...prompts,
       {
         role: "user",
-        content: question,
+        content: situation,
       },
     ],
   });

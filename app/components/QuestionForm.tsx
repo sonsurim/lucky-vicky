@@ -2,17 +2,17 @@
 
 import { SendButton } from "./SendButton";
 import { useFormState } from "react-dom";
-import { createQuestion } from "../services/openai.action";
+import { createAnswer } from "../services/openai.action";
 import { AnswerPromptProps } from "./AnswerPrompt";
 import { DynamicTextarea } from "./DynamicTextarea";
 
 export const QuestionForm = () => {
-  const [answer, dispatch] = useFormState(createQuestion, "");
+  const [answer, dispatch] = useFormState(createAnswer, "");
 
   return (
     <form className="max-w-3xl m-auto" action={dispatch}>
       <div className="flex">
-        <DynamicTextarea name="question" placeholder="고민을 입력해봐!" />
+        <DynamicTextarea name="situation" placeholder="고민을 입력해봐!" />
         <SendButton />
       </div>
       <div>
